@@ -27,6 +27,6 @@ The company entity will store all the names of the companies that are in this pr
 The property entity will be used to store the location, size and price of the property. The entity will also include the name of the company that is working on the development of the property. Furthermore, there is a status attribute which will show the percentage that has been invested in the property. Once the project price is equal to the amount of money invested it will show fully funded. Once the property is fully funded, the system will no longer accept fund transactions for this property. Every property has a unique property Id which will be used as a primary key for the entity. The property entity references the company entity with company_id as the foreign key. 
 User entity represents all the investors who are willing to invest in the development of the property. The following attributes first_name, Last_name, date of birth and IC_number are used to store information of each investor. IC_number is unique for each investor so it is being used as a primary key for the entity 
 Transaction entity keeps track of all the transactions taking place using this app. Each transaction is allocated an unique transaction_id which is used as the primary key and the amount for each transaction is recorded under the amount attribute. The entity links with the user and company entities using ic_number and company_id as their foreign keys respectively. 
-
+s
 Link to this webpage 
 http://54.255.148.131:5000/
