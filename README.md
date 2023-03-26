@@ -28,3 +28,5 @@ The property entity will be used to store the location, size and price of the pr
 User entity represents all the investors who are willing to invest in the development of the property. The following attributes first_name, Last_name, date of birth and IC_number are used to store information of each investor. IC_number is unique for each investor so it is being used as a primary key for the entity 
 Transaction entity keeps track of all the transactions taking place using this app. Each transaction is allocated an unique transaction_id which is used as the primary key and the amount for each transaction is recorded under the amount attribute. The entity links with the user and company entities using ic_number and company_id as their foreign keys respectively. 
 
+Link to this webpage 
+http://54.255.148.131:5000/
