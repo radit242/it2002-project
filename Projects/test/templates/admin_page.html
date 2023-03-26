@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin_page</title>
+	<style>
+		body {
+			background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+			background-size: cover;
+		}
+		.button-group {
+			display: flex;
+			justify-content: center;
+			align-items: center; /* align the button group vertically */
+			margin-top: 20px;
+		}
+		.button-group button {
+			margin: 0 10px;
+			font-size: 1.5em; /* make the font size of the button text bigger */
+			border-radius: 30px; /* add border radius to make the button curve */
+			background-color: #1f1919; /* add background color to the button */
+			color: #fff; /* add font color to the button text */
+			padding: 10px 20px; /* add padding to the button */
+		}		
+		.container {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome back,our web desiger</h1>
+		<h2>Choose your table:</h2>
+	</div>
+
+	<form action="/company_list/" class="button-group">
+		<button>View Company List</button>
+	</form>
+	<form action="/user_list/" class="button-group">
+		<button>View User List</button>
+	</form>
+	<form action="/property_list/" class="button-group">
+		<button>View Property List</button>
+	</form>
+	<form action="/transaction_list/" class="button-group">
+		<button>View Transaction List</button>
+	</form>
+</body>
+</html>

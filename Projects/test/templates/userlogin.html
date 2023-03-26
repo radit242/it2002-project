@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Login</title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'Rstyle.css')}}">
+    </head>
+    <body>
+        <section id="banner">
+            <div class="banner-text">
+                <h1>User Log In</h1>
+                <div>
+                    <form action="/userlogin" method="post" class="banner-btn">
+                        <input type="text" id="ic_number" name="ic_number" placeholder=" IC Number" style="color:black;">
+                        <br>
+                        <input type="text" id="first_name" name="first_name" placeholder="First Name" style="color:black;">
+                        <br>
+                        <input type="password" id="password" name="password" placeholder=" Password" style="color:black;">
+                        <br>
+                        <input type="submit" value="Login" class="banner-btn a" style="color:#fff; opacity: 1; background-color: transparent;">
+                    </form>
+                    {% if x == 0 %}
+                    <p class="error">Incorrect login credentials. Please try again.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

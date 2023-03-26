@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Property Investment Made Simple</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Rstyle.css') }}">
+    </head>
+    <body>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>Company Log in</h1>
+            <div>
+                <form action="/company_access/" method="post" class="banner-btn">
+                    <input type="text" id="company_id" name="company_id" placeholder=" Company ID" style="color:black;">
+                    <br>
+                    <input type="password" name="password" placeholder=" Password" style="color:black;">
+                    <br>
+                    <input type="submit" value="Log In" class="banner-btn a" style="color:#fff; opacity: 1; background-color: transparent;">
+                </form>
+                <p class="error">Incorrect login credentials. Please try again.</p>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>

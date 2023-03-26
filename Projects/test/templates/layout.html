@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>hello</title>
+        <style>
+            body {
+                /*add homepage.jpg as the background-image;*/
+                background-image: url("/Projects/test/static/images/background.jpg");
+                background-size: cover;
+            }
+            .logo{
+                width: 140px;
+                position: absolute;
+                top: 2%;
+                left: 4%;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="/Projects/test/templates/background.jpg" class="logo">
+        {% block body %}{% endblock %}    
+    </body>
+</html>

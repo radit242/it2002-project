@@ -1,0 +1,27 @@
+CREATE TABLE IF NOT EXISTS company (
+	company_id VARCHAR(64) PRIMARY KEY, 
+	password VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    first_name VARCHAR(64) NOT NULL,
+    last_name VARCHAR(64) NOT NULL,
+    dob	DATE NOT NULL,
+    ic_number CHAR(11) PRIMARY KEY,
+    password VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS property (
+	property_id VARCHAR(64) PRIMARY KEY,
+    location VARCHAR(64) NOT NULL,
+    size INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    company_id VARCHAR(64) REFERENCES company(company_id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS transactions (
+	transaction_id INTEGER PRIMARY KEY, 
+	ic_number CHAR(11) REFERENCES users(ic_number) ON UPDATE CASCADE ON DELETE CASCADE,
+	property_id VARCHAR(64) REFERENCES property(property_id) ON UPDATE CASCADE ON DELETE CASCADE, 
+	amount NUMERIC NOT NULL
+);

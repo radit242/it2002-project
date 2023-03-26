@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Property Investment Made Simple</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>PROPERTY INVESTMENT MADE SIMPLE</h1>
+            <br>
+            <p>Join the Power of Property Investment, One Fraction at a Time</p>
+            <div class="banner-btn">
+                <a href="{{  url_for('userlogin')  }}">USER SIGN IN</a>
+                <a href="{{  url_for('company_login')  }}">COMPANY SIGN IN</a>
+            </div>
+            <br>
+            <br>
+            <br>
+            <p>Not a member yet?<br>Sign Up Now!</p>
+            <br>
+            <br>
+            <div class="direct-signup">
+                <a href="{{  url_for('userreg')  }}">I want to sign up as an investor</a>
+                <br>
+                <br>
+                <a href="{{  url_for('company_register')  }}">I want to list my company's properties</a>
+            </div>
+        </div>
+    </section>
+    <div class="admin-login">
+        <a href="{{  url_for('admin_login')  }}">Admin</a>
+    </div>
+
+    </body>
+</html>

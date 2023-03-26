@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>User Homepage</title>
+        <style>
+            .welcome-message {
+                text-align: center;
+                margin-top: 200px;
+                font-size: 2.5em; /* make the font size bigger */
+            }
+            
+            .button-group {
+                display: flex;
+                justify-content: center;
+                align-items: center; /* align the button group vertically */
+                margin-top: 20px;
+            }
+            
+            .button-group button {
+                margin: 0 10px;
+                font-size: 1.5em; /* make the font size of the button text bigger */
+                border-radius: 30px; /* add border radius to make the button curve */
+                background-color: #1f1919; /* add background color to the button */
+                color: #fff; /* add font color to the button text */
+                padding: 10px 20px; /* add padding to the button */
+            }
+            
+            body {
+                background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+            }
+            
+            .logo{
+                width: 140px;
+                position: absolute;
+                top: 2%;
+                left: 4%;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div class="welcome-message">
+            <h1 style="color: #ffffff;">Welcome Back {{ name }}</h1>
+        </div>
+        <div class="button-group">
+            <button onclick="window.location.href = '/invest'">Invest</button>
+            <button onclick="window.location.href = '/current'">Owned</button>  
+        </div>
+    </body>
+</html>
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+    <style>
+		body {
+			background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+			background-size: cover;
+		}
+		table {
+			margin: 0 auto;
+			width: 80%;
+			border-collapse: collapse;
+		}
+	
+		/* Add borders to table rows and columns */
+		table, th, td,h1 {
+			border: 1px solid rgb(255, 255, 255);
+			padding: 10px;
+			text-align: center;
+			color: rgb(15, 11, 11);
+			background-color: #c1c4ca;
+		}
+    </style>
+</head>
+<body>
+	<h1>Property information</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>property_id</th>
+				<th>location</th>
+				<th>size</th>
+				<th>price</th>
+				<th>company_id</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in results %}
+			<tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td><form action="/delete_property_listing/" method="post">
+                    <input type="hidden" name="property_id" value="{{ row[0] }}">
+                    <button class = 'delete-button' type="submit">&#x2715;</button>
+                </form></td>
+			</tr>
+			{% endfor %}
+			<tr><form action="/add_property/" method="get">
+				<td><input type="text" id="property_id" name="property_id" placeholder=" Property ID" style="color:black;"></td>
+				<td><input type="text" id="location" name="location" placeholder=" Location" style="color:black;"></td>
+				<td><input type="text" id="size" name="size" placeholder=" size" style="color:black;"></td>
+				<td><input type="text" id="price" name="price" placeholder=" price" style="color:black;"></td>
+				<td><input type="text" id="company_id"name="company_id" placeholder=" Company ID" style="color:black;"></td>
+			</tr>
+		</tbody>
+	</table>
+	<div style="text-align:center;">
+    <button class = 'btn-addlisting' type="submit" >Add New Property</button>
+    </div></form>
+		
+</body>
+</html>

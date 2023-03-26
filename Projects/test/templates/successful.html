@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>successful</title>
+    <style>
+      /* Center the h1 and button on the page */
+      h1,
+      button {
+        text-align: center;
+      }
+
+      /* Center the image on the page */
+      img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+      body {
+        background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+      }
+
+      /* Container element to hold both buttons */
+      .button-container {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-left: 10px;
+      }
+
+      /* Change the color of the button on hover */
+      button:hover {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <!--A message "Your investment was successful."-->
+    <h1>Your investment was successful.</h1>
+    <!--add the successful.jpg -->
+    <img src="https://i.imgflip.com/mlqo9.jpg?a466104" alt="successful" />
+
+    <!--Container element to hold both buttons -->
+    <div class="button-container">
+      <!--A button that will link to invest.html-->
+      <button onclick="window.location.href='/invest'">Invest</button>
+      <!--A button that will link to current.html-->
+      <button onclick="window.location.href='/current'">Current</button>
+    </div>
+  </body>
+</html>

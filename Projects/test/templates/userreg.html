@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Registration</title>
+        <link rel="stylesheet" href="{{url_for('static', filename = 'Rstyle.css')}}">
+    </head>
+    <body>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>Sign Up</h1>
+            <br>
+            <p>Please fill in this form to create an account</p>
+            <div>
+                <form action="/userreg" method="post" class="banner-btn">
+                    <input type="text" id="name" name="first_name" placeholder=" First Name" style="color:black;">
+                    <br>
+                    <input type="text" id="last_name" name="last_name" placeholder=" Last Name" style="color:black;">
+                    <br>
+                    <input type="date" id="dob" name="dob" placeholder=" Date of birth" style="color:black;">
+                    <br>
+                    <input type="text" id="ic_number" name="ic_number" placeholder="IC number" style="color:black;">
+                    <br>
+                    <input type="password" id="password" name="password" placeholder=" Password" style="color:black;">
+                    <br>
+                    <input type="submit" value="Register" class="banner-btn a" style="color:#fff; opacity: 1; background-color: transparent;">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html
+
+

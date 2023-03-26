@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>table</title>
+    <style>
+		body {
+			background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+			background-size: cover;
+		}
+		table {
+			margin: 0 auto;
+			width: 80%;
+			border-collapse: collapse;
+		}
+	
+		/* Add borders to table rows and columns */
+		table, th, td,h1 {
+			border: 1px solid rgb(255, 255, 255);
+			padding: 10px;
+			text-align: center;
+			color: rgb(15, 11, 11);
+			background-color: #c1c4ca;
+		}
+    </style>
+</head>
+<body>
+	<h1>User Information</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>DOB</th>
+				<th>IC Number</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for row in results %}
+			<tr>
+				<td>{{ row[0] }}</td>
+				<td>{{ row[1] }}</td>
+				<td>{{ row[2] }}</td>
+				<td>{{ row[3] }}</td>
+				<td>{{ row[4] }}</td>
+				<td><form action="/delete_user_listing/" method="post">
+                    <input type="hidden" name="ic_number" value="{{ row[3] }}">
+                    <button class = 'delete-button' type="submit">&#x2715;</button>
+                </form></td>
+			</tr>
+			{% endfor %}
+			<tr><form action="/add_user/" method="get">
+				<td><input type="text" id="first_name" name="first_name" placeholder=" Fisrt name" style="color:black;"></td>
+				<td><input type="text" id="last_name" name="last_name" placeholder=" Last name" style="color:black;"></td>
+				<td><input type="date" id="dob" name="dob" placeholder=" Date of Birth" style="color:black;"></td>
+				<td><input type="text" id="ic_number" name="ic_number" placeholder=" IC number" style="color:black;"></td>
+				<td><input type="text" name="password" placeholder=" Password" style="color:black;"></td>
+			</tr>
+		</tbody>
+	</table>
+	<div style="text-align:center;">
+    <button class = 'btn-addlisting' type="submit" >Add New User</button>
+    </div></form>
+</body>
+</html>

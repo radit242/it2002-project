@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <title>Investment</title>
+        <style>
+            table {
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+            }
+        
+            /* Add borders to table rows and columns */
+            table, th, td {
+                border: 1px solid rgb(255, 255, 255);
+                padding: 10px;
+                text-align: center;
+                color: rgb(15, 11, 11);
+                background-color: #c1c4ca;
+            }
+            h1, h2 {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            body {
+                background-image: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                height: 100vh;
+            }
+            /*logout button on right top corner of the page*/
+            .btn-logout {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 10px;
+                padding: 10px;
+                background-color: #020202;
+                color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .home-button {
+                position: absolute;
+                top: 0;
+                right: 80px;
+                margin: 10px;
+                padding: 10px;
+                background-color: #000000;
+                color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 0;
+            }
+
+            .btn-logout:hover {
+                background-color: #3e8e41;
+            }
+
+            .home-button:hover {
+                background-color: #3e8e41;
+            }
+
+            .invest-button{
+                margin-top: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Hi!! {{ name }},</h1>
+        <h2>Consider investing in market properties that are currently available.</h2>
+        <button class="btn-logout" onclick="window.location.href='/'">Logout</button>
+        <!--create a table with property_id, Location, Size, Price, Company_id, Invested_amount, status, a text box amount named amount to Invest and a button named invest inside each row that will pass the information of the entire row to /successful path-->
+        <table>
+            <tr>
+                <th>Property ID</th>
+                <th>Location</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Company ID</th>
+                <th>Invested Amount</th>
+                <th>Status</th>
+                <th>Invest</th>
+            </tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td><form action="/successful" method="GET">
+                    <input type="hidden" name="propertyID" value="{{ row[0] }}">
+                    <input type="hidden" name="location" value="{{ row[1] }}">
+                    <input type="hidden" name="size" value="{{ row[2] }}">
+                    <input type="hidden" name="price" value="{{ row[3] }}">
+                    <input type="hidden" name="companyID" value="{{ row[4] }}">
+                    <input type="hidden" name="investedAmount" value="{{ row[5] }}">
+                    <input type="hidden" name="status" value="{{ row[6] }}">
+                    <input type="text" id="amount" name="amount" placeholder=" Amount" style="color:black;">
+                    <br>
+                    <button class = 'invest-button' type="submit" >Invest</button>
+                </form></td>
+            </tr>
+            {% endfor %}
+        
+        
+        </table>
+        <button onclick="window.location.href='/current/'" class="home-button">Owned Property</button>
+    </body>
+</html>

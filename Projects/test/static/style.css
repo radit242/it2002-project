@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+#banner{
+    background: linear-gradient(rgba(109, 108, 108, 0.05), rgb(127, 127, 155)), url("images/homepage.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+.logo{
+    width: 140px;
+    position: absolute;
+    top: 2%;
+    left: 4%;
+}
+.banner-text{
+    text-align: center;
+    color:rgb(255, 255, 255);
+    padding-top: 120px;
+}
+.banner-text h1{
+    font-size: 30px;
+}
+.banner-text p{
+    font-size: 18px;
+}
+.banner-btn{
+    margin: 30px auto 0;
+}
+.banner-btn a{
+    width: 150px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 12px 0;
+    color: #fff;
+    border: .5px solid #fff;
+}
+.direct-signup a{
+    color:#fff;
+    font-size: 18px;
+    margin: 20px;
+}
+.admin-login a{
+    color:#fff;
+    position: fixed;
+    bottom: 0;
+    right: 2%;
+    text-decoration: none;
+}
+
+.banner-btn input{
+    font-size: 16px;
+    width: 300px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px 10px 10px 10px;
+    padding: 12px 2px;
+    border: 2px solid #fff;
+    opacity: .5;
+}
+.banner-btn input[type=text]:focus{
+    border: 5px;
+}
+.table td{
+    margin: 10px 10px 10px 10px;
+    padding: 12px 10px;
+    font-size: 20px;
+    width: 300px;
+}
+.add-listing input{
+    margin: 10px 10px 10px 10px;
+    padding: 12px 10px;
+    font-size: 20px;
+    width: 300px;
+    border: .5px solid #fff;
+    opacity: .5;
+
+}
+

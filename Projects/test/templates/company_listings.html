@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Current Property Listings</title>
+        <style>
+            table {
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+            }
+        
+            /* Add borders to table rows and columns */
+            table, th, td {
+                border: 1px solid rgb(255, 255, 255);
+                padding: 10px;
+                text-align: center;
+                color: rgb(15, 11, 11);
+                background-color: #c1c4ca;
+            }
+            h1, h2 {
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            body {
+                background: url(https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800);
+                background-size: cover;
+            }
+            /*logout button on right top corner of the page*/
+            .btn-logout {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin: 10px;
+                padding: 10px;
+                background-color: #020202;
+                color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .btn-logout:hover {
+                background-color: #3e8e41;
+            }
+
+            .btn-addlisting{
+                margin-top: 10px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>Welcome back, {{ company_id }}!</h1>
+        <h2>Current Property Listings</h2>
+        <!-- a button to go back to company_login.html-->
+        <button class="btn-logout" onclick="window.location.href='/'">Logout</button>
+        <!--a table that will show the following information property_id, location, size, price, company_id,  invested_amount, status--> 
+        <table>
+            <thead>
+                <tr>
+                    <th>Property ID</th>
+                    <th>Location</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for listing in listings %}
+                <tr>
+                    <td>{{ listing.property_id }}</td>
+                    <td>{{ listing.location }}</td>
+                    <td>{{ listing.size }}</td>
+                    <td>{{ listing.price }}</td>
+                </tr>
+                {% endfor %}
+
+                <tr><form action="/company_add_listing/" method="post">
+                    <td><input type="text" id="property_id" name="property_id" placeholder=" Property ID" style="color:black;"></td>
+                    <td><input type="text" name="location" placeholder=" Location" style="color:black;"></td>
+                    <td><input type="number" name="size" placeholder=" Size" style="color:black;"></td>
+                    <td><input type="number" name="price" placeholder=" Goal Amount" style="color:black;"></td>
+                    <input type="hidden" name="company_id" value="{{ company_id  }}">
+                    <input type="hidden" name="listings" value="{{ listings  }}">
+                </tr>
+            </tbody>
+        </table>
+        <div style="text-align:center;">
+        <button class = 'btn-addlisting' type="submit" >Add New Listing</button>
+        </div></form>
+    </body>
+</html>
+ 
+

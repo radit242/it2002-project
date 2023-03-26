@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Property Investment Made Simple</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>Sign Up</h1>
+            <br>
+            <p>Please fill in this form to create an account</p>
+            <div>
+                <form action="/company_add_account/" method="post" class="banner-btn">
+                    <h3 style="color:rgb(158, 44, 44);">ID already exists</h3>
+                    <input type="text" id="id" name="id" placeholder=" Company ID" style="color:black;">
+                    <br>
+                    <input type="password" name="password" placeholder=" Password" style="color:black;">
+                    <br>
+                    <input type="submit" value="Register" class="banner-btn a" style="color:#fff; opacity: 1; background-color: transparent;">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    </body>
+</html>
